@@ -18,6 +18,7 @@ function sp_shortcodes_register_mce_button( $buttons ) {
 	array_push( $buttons, 'team' );
 	array_push( $buttons, 'branch' );
 	array_push( $buttons, 'faq' );
+	array_push( $buttons, 'exchange' );
 
     return $buttons;
 }
@@ -36,6 +37,7 @@ function sp_shortcodes_add_tinymce_plugin($plugin_array) {
 	$plugin_array['team']			= ED_JS_URL . 'ed-team.js';
 	$plugin_array['branch']			= ED_JS_URL . 'ed-branch.js';
 	$plugin_array['faq']			= ED_JS_URL . 'ed-faq.js';
+	$plugin_array['exchange']		= ED_JS_URL . 'ed-exchange.js';
 	
     return $plugin_array;
  }

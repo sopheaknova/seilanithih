@@ -8,6 +8,7 @@ load_template( SP_BASE_DIR . 'library/custom-posts/cp-client.php' );
 load_template( SP_BASE_DIR . 'library/custom-posts/cp-logo.php' );
 load_template( SP_BASE_DIR . 'library/custom-posts/cp-branch.php' );
 load_template( SP_BASE_DIR . 'library/custom-posts/cp-faq.php' );
+load_template( SP_BASE_DIR . 'library/custom-posts/cp-exchange.php' );
 load_template( SP_BASE_DIR . 'library/custom-posts/cp-slider.php' );
 
 //Taxonomies

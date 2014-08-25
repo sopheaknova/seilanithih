@@ -25,7 +25,7 @@ if( !function_exists('sp_theme_setup') )
 		add_theme_support( 'automatic-feed-links' );
 
 		// Add post formats
-		add_theme_support( 'post-formats', array( 'audio', 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
+		//add_theme_support( 'post-formats', array( 'audio', 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 	
 		// Add suport for post thumbnails and set default sizes
 		add_theme_support( 'post-thumbnails' );

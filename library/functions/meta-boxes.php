@@ -303,6 +303,30 @@ $post_type_branch = array(
 );
 
 /* ---------------------------------------------------------------------- */
+/*	Exchange Rate
+/* ---------------------------------------------------------------------- */
+$post_type_exchange = array(
+	'id'          => 'exchange-meta',
+	'title'       => 'Exchange meta',
+	'desc'        => '',
+	'pages'       => array( 'exchange' ),
+	'context'     => 'normal',
+	'priority'    => 'high',
+	'fields'      => array(
+		array(
+			'label'		=> 'Buying',
+			'id'		=> $prefix . 'buy_rate',
+			'type'		=> 'text',
+		),
+		array(
+			'label'		=> 'Selling',
+			'id'		=> $prefix . 'sell_rate',
+			'type'		=> 'text',
+		)
+	)
+);
+
+/* ---------------------------------------------------------------------- */
 /*	Post Format: video
 /* ---------------------------------------------------------------------- */
 $post_format_video = array(
@@ -637,13 +661,13 @@ function rw_maybe_include() {
 /*  Register meta boxes
 /* ------------------------------------ */
 	ot_register_meta_box( $page_options );
+	/*ot_register_meta_box( $post_options );
 	ot_register_meta_box( $post_format_audio );
 	ot_register_meta_box( $post_format_chat );
-	//ot_register_meta_box( $post_format_gallery );
 	ot_register_meta_box( $post_format_link );
 	ot_register_meta_box( $post_format_quote );
 	ot_register_meta_box( $post_format_video );
-	// ot_register_meta_box( $post_options );
+	ot_register_meta_box( $post_format_gallery );*/
 	ot_register_meta_box( $post_type_home_sliders );
 	ot_register_meta_box( $post_type_service );
 	ot_register_meta_box( $post_type_team );
@@ -651,6 +675,7 @@ function rw_maybe_include() {
 	ot_register_meta_box( $post_type_gallery );
 	ot_register_meta_box( $post_type_slider );
 	ot_register_meta_box( $post_type_branch );
+	ot_register_meta_box( $post_type_exchange );
 
 	$template_file = rw_maybe_include();
 	if ( $template_file == 'template-home.php' ) {

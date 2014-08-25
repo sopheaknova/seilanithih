@@ -1144,6 +1144,43 @@ if ( ! function_exists( 'map_branch_by_location' ) ) {
 }	
 
 /* ---------------------------------------------------------------------- */
+/*	Branch
+/* ---------------------------------------------------------------------- */
+
+if ( ! function_exists( 'sp_get_exchange_rate' ) ) {
+	function sp_get_exchange_rate(){
+
+		$out = '';
+		
+		$args = array(
+			'post_type'	=> 'exchange',
+			'post_status' => 'publish'
+		);
+		$custom_query = new WP_Query( $args );
+
+		if( $custom_query->have_posts() ) :
+			$out .= '<table>';
+			$out .= '<tr>';
+			$out .= '<td>' . __('Currency', SP_TEXT_DOMAIN ) . '</td>';
+			$out .= '<td>' . __('Selling', SP_TEXT_DOMAIN ) . '</td>';
+			$out .= '<td>' . __('Buying', SP_TEXT_DOMAIN ) . '</td>';
+			$out .= '</tr>';
+			while ( $custom_query->have_posts() ) : $custom_query->the_post();
+				$out .= '<tr>';
+				$out .= '<td>' . get_the_title() . '</td>';
+				$out .= '<td>' . get_post_meta( get_the_ID(), 'sp_sell_rate', true ) . '</td>';
+				$out .= '<td>' . get_post_meta( get_the_ID(), 'sp_buy_rate', true ) . '</td>';
+				$out .= '</tr>';
+			endwhile; wp_reset_postdata();
+			$out .= '</table>';
+		endif;
+
+		return $out;
+
+	}
+}
+
+/* ---------------------------------------------------------------------- */
 /*	Social icons - Widget
 /* ---------------------------------------------------------------------- */
 if ( ! function_exists( 'sp_show_social_icons' ) ) {

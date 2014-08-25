@@ -37,6 +37,7 @@ if ( ! isset( $cp_menu_position ) )
 			'menu_logo'			=> 39,
 			'menu_branch'		=> 42,
 			'menu_faq'			=> 45,
+			'menu_exchange'		=> 45,
 			'menu_slider'		=> 48,
 		);
 

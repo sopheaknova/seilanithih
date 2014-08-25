@@ -40,6 +40,7 @@ function sp_add_shortcodes() {
 	add_shortcode( 'team', 'sp_team_sc' );
 	add_shortcode( 'branch', 'sp_branch_sc' );
 	add_shortcode( 'faq', 'sp_faq_sc' );
+	add_shortcode( 'exchange', 'sp_exchange_sc' );
 	
 }
 add_action( 'init', 'sp_add_shortcodes' );
@@ -326,6 +327,19 @@ function sp_faq_sc( $atts, $content = null ){
 	return sp_get_faqs( $numberposts );
 
 }
+
+/*--------------------------------------------------------------------------------------*/
+/* Exhange Rate shortcode
+/*--------------------------------------------------------------------------------------*/
+function sp_exchange_sc( $atts, $content = null ){
+
+	extract( shortcode_atts( array(), $atts ) );
+
+	return sp_get_exchange_rate();
+
+}
+
+
 
 
 

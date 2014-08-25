@@ -415,37 +415,6 @@ function custom_theme_options() {
 				)
 			)
 		),
-		// Layout : Gallery
-		array(
-			'id'		=> 'layout-gallery',
-			'label'		=> 'Gallery',
-			'desc'		=> '[ <strong>is_gallery</strong> ] Gallery post layout - If a post has a set layout, it will override this.',
-			'std'		=> 'inherit',
-			'type'		=> 'radio-image',
-			'section'	=> 'layout',
-			'choices'	=> array(
-				array(
-					'value'		=> 'inherit',
-					'label'		=> 'Inherit Global Layout',
-					'src'		=> SP_ASSETS_ADMIN . 'images/layout-off.png'
-				),
-				array(
-					'value'		=> 'col-1c',
-					'label'		=> '1 Column',
-					'src'		=> SP_ASSETS_ADMIN . 'images/col-1c.png'
-				),
-				array(
-					'value'		=> 'col-2cl',
-					'label'		=> '2 Column Left',
-					'src'		=> SP_ASSETS_ADMIN . 'images/col-2cl.png'
-				),
-				array(
-					'value'		=> 'col-2cr',
-					'label'		=> '2 Column Right',
-					'src'		=> SP_ASSETS_ADMIN . 'images/col-2cr.png'
-				)
-			)
-		),
 		// Layout : Archive
 		array(
 			'id'		=> 'layout-archive',
@@ -646,13 +615,6 @@ function custom_theme_options() {
 			'id'		=> 's1-service',
 			'label'		=> 'Service',
 			'desc'		=> '[ <strong>is_service</strong> ] Primary - If a service post has a unique sidebar, it will override this.',
-			'type'		=> 'sidebar-select',
-			'section'	=> 'sidebars'
-		),
-		array(
-			'id'		=> 's1-gallery',
-			'label'		=> 'Gallery',
-			'desc'		=> '[ <strong>is_gallery</strong> ] Primary - If a Gallery post has a unique sidebar, it will override this.',
 			'type'		=> 'sidebar-select',
 			'section'	=> 'sidebars'
 		),

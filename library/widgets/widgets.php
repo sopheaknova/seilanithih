@@ -35,6 +35,7 @@ load_template ( SP_BASE_DIR . 'library/widgets/widget-logos.php' );
 load_template ( SP_BASE_DIR . 'library/widgets/widget-assistant.php' );
 load_template ( SP_BASE_DIR . 'library/widgets/widget-subnav.php' );
 load_template ( SP_BASE_DIR . 'library/widgets/widget-service.php' );
+load_template ( SP_BASE_DIR . 'library/widgets/widget-exchange.php' );
 /*load_template ( SP_BASE_DIR . 'library/widgets/widget-social-networks.php' );
 load_template ( SP_BASE_DIR . 'library/widgets/widget-enewsletter.php' );
 load_template ( SP_BASE_DIR . 'library/widgets/widget-quick-contact.php' );
@@ -91,7 +92,6 @@ if ( ! function_exists( 'sp_layout_class' ) ) {
 			// Else check for custom post
 			elseif ( is_singular('team') && ( ot_get_option('layout-team') !='inherit' ) ) $layout = ot_get_option('layout-team',''.$default.'');
 			elseif ( is_singular('service') && ( ot_get_option('layout-service') !='inherit' ) ) $layout = ot_get_option('layout-service',''.$default.'');
-			elseif ( is_singular('gallery') && ( ot_get_option('layout-gallery') !='inherit' ) ) $layout = ot_get_option('layout-gallery',''.$default.'');
 			// Else get global option
 			else $layout = ot_get_option('layout-global',''.$default.'');
 		}
@@ -123,8 +123,8 @@ if ( ! function_exists( 'sp_sidebar_primary' ) ) {
 
 		// Set sidebar based on page
 		if ( is_home() && ot_get_option('s1-home') ) $sidebar = ot_get_option('s1-home');
-		if ( is_single() && ot_get_option('s1-team') ) $sidebar = ot_get_option('s1-team');
 		if ( is_single() && ot_get_option('s1-single') ) $sidebar = ot_get_option('s1-single');
+		if ( is_singular() && ot_get_option('s1-team') ) $sidebar = ot_get_option('s1-team');
 		if ( is_singular('service') && ot_get_option('s1-service') ) $sidebar = ot_get_option('s1-service');
 		if ( is_archive() && ot_get_option('s1-archive') ) $sidebar = ot_get_option('s1-archive');
 		if ( is_category() && ot_get_option('s1-archive-category') ) $sidebar = ot_get_option('s1-archive-category');
