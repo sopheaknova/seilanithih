@@ -36,13 +36,8 @@ load_template ( SP_BASE_DIR . 'library/widgets/widget-assistant.php' );
 load_template ( SP_BASE_DIR . 'library/widgets/widget-subnav.php' );
 load_template ( SP_BASE_DIR . 'library/widgets/widget-service.php' );
 load_template ( SP_BASE_DIR . 'library/widgets/widget-exchange.php' );
-/*load_template ( SP_BASE_DIR . 'library/widgets/widget-social-networks.php' );
-load_template ( SP_BASE_DIR . 'library/widgets/widget-enewsletter.php' );
-load_template ( SP_BASE_DIR . 'library/widgets/widget-quick-contact.php' );
-load_template ( SP_BASE_DIR . 'library/widgets/widget-post-category.php' );
-load_template ( SP_BASE_DIR . 'library/widgets/widget-fb-likebox.php' );
 load_template ( SP_BASE_DIR . 'library/widgets/widget-video.php' );
-load_template ( SP_BASE_DIR . 'library/widgets/widget-photogallery.php' );*/
+load_template ( SP_BASE_DIR . 'library/widgets/widget-image-link.php' );
 
 /* ---------------------------------------------------------------------- */
 /*	Register custom sidebars
