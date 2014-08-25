@@ -26,10 +26,9 @@ get_header(); ?>
                                 <h1 class="entry-title">
                                     <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                                 </h1>
-                                <div class="entry-meta"><?php sp_post_meta(); ?></div>
                             </header>
 
-                            <?php get_template_part('library/contents/post-formats'); ?>            
+                            <?php //get_template_part('library/contents/post-formats'); ?>            
 
                             
                             <?php if (ot_get_option('excerpt-length') != '0'): ?>

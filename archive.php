@@ -43,10 +43,8 @@ get_header(); ?>
                                 <h1 class="entry-title">
                                     <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                                 </h1>
-                                <div class="entry-meta"><?php sp_post_meta(); ?></div>
-                            </header>
-
-                            <?php get_template_part('library/contents/post-formats'); ?>            
+                                <div class="entry-meta"><i class="icon icon-calendar-1"></i> <?php the_date(); ?></div>
+                            </header>         
 
                             
                             <?php if (ot_get_option('excerpt-length') != '0'): ?>
