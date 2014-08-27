@@ -99,13 +99,11 @@
 	*/
 	if ( ! function_exists( 'sp_branch_cp_columns' ) ) {
 		function sp_branch_cp_columns( $columns ) {
-			
-			$columns = array(
-				'cb'                   	=> '<input type="checkbox" />',
-				'title'                	=> __( 'Branch Name', 'sptheme_admin' ),
-				'branch_location'		 		=> __( 'Location', 'sptheme_admin' ),
-				'date'		 			=> __( 'Date', 'sptheme_admin' )
-			);
+
+			$columns['cb']                   	= '<input type="checkbox" />';
+			$columns['title']                	= __( 'Branch Name', 'sptheme_admin' );
+			$columns['branch_location']		 	= __( 'Location', 'sptheme_admin' );
+			$columns['date']		 			= __( 'Date', 'sptheme_admin' );
 
 			return $columns;
 		}

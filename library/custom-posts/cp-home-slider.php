@@ -98,12 +98,10 @@
 	if ( ! function_exists( 'sp_home_slider_cp_columns' ) ) {
 		function sp_home_slider_cp_columns( $columns ) {
 			
-			$columns = array(
-				'cb'                   	=> '<input type="checkbox" />',
-				'home_slider_thumbnail' => __( 'Thumbnail', 'sptheme_admin' ),
-				'title'                	=> __( 'Slide Name', 'sptheme_admin' ),
-				'date' 					=> __( 'Date', 'sptheme_admin' )
-			);
+			$columns['cb']                   	= '<input type="checkbox" />';
+			$columns['home_slider_thumbnail'] 	= __( 'Thumbnail', 'sptheme_admin' );
+			$columns['title']                	= __( 'Slide Name', 'sptheme_admin' );
+			$columns['date'] 					= __( 'Date', 'sptheme_admin' );
 
 			return $columns;
 		}
@@ -121,10 +119,10 @@
 			switch ( $column ) {
 					
 				case "home_slider_thumbnail":
-				$img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-				echo '<img src="' . $img_url[0] . '" width="150">';
-				break;
 
+					$img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+					echo '<img src="' . $img_url[0] . '" width="150">';
+					
 				break;
 				
 				default:

@@ -97,14 +97,12 @@
 	*/
 	if ( ! function_exists( 'sp_team_cp_columns' ) ) {
 		function sp_team_cp_columns( $columns ) {
-			
-			$columns = array(
-				'cb'                   	=> '<input type="checkbox" />',
-				'team_thumbnail'	   	=> __( 'Thumbnail', 'sptheme_admin' ),
-				'title'                	=> __( 'Title', 'sptheme_admin' ),
-				'team_category'			=> __( 'Category', 'sptheme_admin' ),
-				'date'		 			=> __( 'Date', 'sptheme_admin' )
-			);
+		
+			$columns['cb']                  = '<input type="checkbox" />';
+			$columns['team_thumbnail']	   	= __( 'Thumbnail', 'sptheme_admin' );
+			$columns['title']               = __( 'Title', 'sptheme_admin' );
+			$columns['team_category']		= __( 'Category', 'sptheme_admin' );
+			$columns['date']		 		= __( 'Date', 'sptheme_admin' );
 
 			return $columns;
 		}

@@ -100,14 +100,12 @@
 	if ( ! function_exists( 'sp_logo_cp_columns' ) ) {
 		function sp_logo_cp_columns( $columns ) {
 			
-			$columns = array(
-				'cb'                   	=> '<input type="checkbox" />',
-				'logo_thumbnail'	   	=> __( 'Thumbnail', 'sptheme_admin' ),
-				'title'                	=> __( 'Company Name', 'sptheme_admin' ),
-				'logo_type'		 		=> __( 'Logo Type', 'sptheme_admin' ),
-				'date'		 			=> __( 'Date', 'sptheme_admin' )
-			);
-
+			$columns['cb']                  = '<input type="checkbox" />';
+			$columns['logo_thumbnail']	   	= __( 'Thumbnail', 'sptheme_admin' );
+			$columns['title']               = __( 'Company Name', 'sptheme_admin' );
+			$columns['logo_type']		 	= __( 'Logo Type', 'sptheme_admin' );
+			$columns['date']		 		= __( 'Date', 'sptheme_admin' );
+			
 			return $columns;
 		}
 	}

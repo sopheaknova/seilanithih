@@ -100,14 +100,12 @@
 	if ( ! function_exists( 'sp_exchange_cp_columns' ) ) {
 		function sp_exchange_cp_columns( $columns ) {
 			
-			$columns = array(
-				'cb'                   	=> '<input type="checkbox" />',
-				'title'                	=> __( 'Company Name', 'sptheme_admin' ),
-				'exchange_buy'          => __( 'Buy', 'sptheme_admin' ),
-				'exchange_sell'         => __( 'Sell', 'sptheme_admin' ),
-				'date'		 			=> __( 'Date', 'sptheme_admin' )
-			);
-
+			$columns['cb']                   = '<input type="checkbox" />';
+			$columns['title']                = __( 'Company Name', 'sptheme_admin' );
+			$columns['exchange_buy']         = __( 'Buy', 'sptheme_admin' );
+			$columns['exchange_sell']        = __( 'Sell', 'sptheme_admin' );
+			$columns['date']		 		 = __( 'Date', 'sptheme_admin' );
+			
 			return $columns;
 		}
 	}
