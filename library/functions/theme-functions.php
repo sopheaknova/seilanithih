@@ -14,7 +14,7 @@ if( !function_exists('languages_list_header')) {
 			foreach($languages as $l){
 				echo '<li class="'.$l['language_code'].'">';
 
-				if(!$l['active']) echo '<a href="'.$l['url'].'" title="' . $l['native_name'] . '">';
+				if(!$l['active']) echo '<a href="'.$l['url'].'" title="' . $l['native_name'] . '" class="active">';
 				echo '<img src="' . $l['country_flag_url'] . '" alt="' . $l['native_name'] . '" />';
 				if(!$l['active']) echo '</a>';
 

@@ -47,7 +47,11 @@
                 <?php if( !is_singular() ) echo '</h1>'; else echo '</h2>'; ?>
             </div><!-- end .brand -->
             
-            <?php //echo languages_list_header(); ?>
+            <?php 
+                if (function_exists('icl_get_languages')) {
+                    echo languages_list_header();
+                }
+            ?>
 		</div><!-- end .container .clearfix -->
         </header><!-- end #header -->
 
