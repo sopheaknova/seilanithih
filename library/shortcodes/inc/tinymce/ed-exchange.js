@@ -7,7 +7,7 @@
         init : function( ed, url ) {
              ed.addButton( 'exchange', {
                 title : 'Insert Exchange',
-                image : url + '/ed-icons/hr.png',
+                image : url + '/ed-icons/dollar.png',
                 onclick : function() {
                 	var shortcode = '[exchange]';
                 	tinyMCE.activeEditor.execCommand( 'mceInsertContent', 0, shortcode );
