@@ -608,7 +608,7 @@ $page_template_home = array(
 			'id'		=> $prefix . 'client_page_id',
 			'type'		=> 'page-select'
 		),
-		array(
+		/*array(
 			'label'		=> 'Partners',
 			'id'		=> $prefix . 'partner_options',
 			'type'		=> 'tab'
@@ -625,7 +625,7 @@ $page_template_home = array(
 			'type'		=> 'text',
 			'std'		=> '-1',
 			'desc'		=> 'Enter number of logo e.g. 10'
-		),
+		),*/
 	)
 );
 

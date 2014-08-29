@@ -67,11 +67,13 @@ $home_meta = get_post_meta( $post->ID );
                 'posts_per_page'   => $home_meta['sp_service_num'][0], 
                 'post_status'      => 'publish'
                 );
-            $custom_query = get_posts($args);
-            if ( $custom_query ) {
+            $custom_query = new WP_Query( $args );
+
             $out = '<div class="services-carousel flexslider">';
             $out .= '<ul class="slides">';
-            foreach ( $custom_query as $post ) : setup_postdata( $post ); 
+            
+            while ( $custom_query->have_posts() ) : $custom_query->the_post();
+            
                 $out .= '<li>';
                 $out .= '<div class="loan-item">';
                 if ( has_post_thumbnail() ) :
@@ -89,10 +91,12 @@ $home_meta = get_post_meta( $post->ID );
                 $out .= '<a class="btn" href="' . get_the_permalink() . '">' . __( 'Learn more', SP_TEXT_DOMAIN ) .'</a>';
                 $out .= '</div>';
                 $out .= '</li>';
-            endforeach; 
-            wp_reset_postdata();
-                $out .= '</ul>';
-            }
+
+            endwhile;
+            wp_reset_postdata(); 
+            
+            $out .= '</ul>';
+
             echo $out;
             ?>     
         </div> <!-- .container .clearfix -->

@@ -8,9 +8,9 @@ if( !function_exists('languages_list_header')) {
 
 	function languages_list_header(){
 		$languages = icl_get_languages('skip_missing=0&orderby=code');
-		if(!empty($languages)){
+		if(!empty($languages) && ot_get_option('show-lang-flag') != 'off' ){
 			echo '<div class="language"><ul>';
-			echo '<li>' . __('Language: ', 'sptheme') . '</li>';
+			//echo '<li>' . __('Language: ', 'sptheme') . '</li>';
 			foreach($languages as $l){
 				echo '<li class="'.$l['language_code'].'">';
 
@@ -24,6 +24,23 @@ if( !function_exists('languages_list_header')) {
 		}
 	}
 
+}
+
+/* ---------------------------------------------------------------------- */
+/* Translating arrays of IDs
+/* ---------------------------------------------------------------------- */
+
+function lang_object_ids($ids_array, $type) {
+	if(function_exists('icl_object_id')) {
+		$res = array();
+		foreach ($ids_array as $id) {
+			$xlat = icl_object_id($id,$type,false);
+			if(!is_null($xlat)) $res[] = $xlat;
+		}
+		return $res;
+	} else {
+		return $ids_array;
+	}
 }
 
 /* ---------------------------------------------------------------------- */
@@ -368,7 +385,7 @@ if ( ! function_exists( 'sp_comment_template' ) ) {
 				<?php comment_text(); ?>
 				
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="await"><?php _e( 'Your comment is awaiting moderation.', 'goodwork' ); ?></em>
+					<em class="await"><?php _e( 'Your comment is awaiting moderation.', SP_TEXT_DOMAIN ); ?></em>
 				<?php endif; ?>
 
 			</div>
@@ -382,7 +399,7 @@ if ( ! function_exists( 'sp_comment_template' ) ) {
 		?>
 		
 		<li class="post pingback">
-			<p><?php _e( 'Pingback:', 'goodwork' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'goodwork'), ' ' ); ?></p></li>
+			<p><?php _e( 'Pingback:', SP_TEXT_DOMAIN ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', SP_TEXT_DOMAIN), ' ' ); ?></p></li>
 		<?php
 				break;
 		endswitch;
@@ -955,8 +972,8 @@ if ( ! function_exists( 'sp_get_logos_by_type' ) ) {
              'tax_query' => array(
                     array(
                         'taxonomy' => 'logo-type',
-                        'field' => 'ids',
-                        'terms' => $term_id
+                        'field' => 'id',
+                        'terms' => lang_object_ids(array($term_id), 'logo-type')
                     )
                 )
         );
@@ -1011,8 +1028,8 @@ if ( ! function_exists( 'sp_get_branch_by_tax' ) ) {
              'tax_query' => array(
                     array(
                         'taxonomy' => 'branch-location',
-                        'field' => 'ids',
-                        'terms' => $term_id
+                        'field' => 'id',
+                        'terms' => lang_object_ids(array($term_id), 'branch-location')
                     )
                 )
         );
@@ -1063,8 +1080,8 @@ if ( ! function_exists( 'map_branch_by_location' ) ) {
 	             'tax_query' => array(
 	                    array(
 	                        'taxonomy' => 'branch-location',
-	                        'field' => 'ids',
-	                        'terms' => $term_id
+	                        'field' => 'id',
+	                        'terms' => lang_object_ids(array($term_id), 'branch-location')
 	                    )
 	                )
 	        );

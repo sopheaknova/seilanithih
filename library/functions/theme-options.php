@@ -149,6 +149,15 @@ function custom_theme_options() {
 				)
 			)
 		),
+		// Header: Display language
+		array(
+			'id'		=> 'show-lang-flag',
+			'label'		=> 'Show language flag',
+			'desc'		=> 'Check on to display language flag.',
+			'std'		=> 'on',
+			'type'		=> 'on-off',
+			'section'	=> 'header'
+		),
 		// Header: Header Image
 		array(
 			'id'		=> 'header-image',
