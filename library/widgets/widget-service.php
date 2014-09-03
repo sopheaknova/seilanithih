@@ -65,7 +65,7 @@ class sp_widget_service extends WP_Widget {
 				$out .= '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>'; 
 			}
 			endwhile; wp_reset_postdata();
-		$out .= '<ul>';	
+		$out .= '</ul>';	
 		endif; 
 
 		/* After widget (defined by themes). */		

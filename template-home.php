@@ -158,6 +158,7 @@ $home_meta = get_post_meta( $post->ID );
                 echo $out;
                 ?>
                 </div> <!-- accordion -->
+                <?php echo $home_meta['sp_faq_page_id'][0]; ?>
                 <a class="learn-more" href="<?php echo get_page_link($home_meta['sp_faq_page_id'][0]); ?>"><?php _e( 'See all FAQs', SP_TEXT_DOMAIN ); ?></a>
             </div>
             <div class="two-fourth last">
